@@ -13,12 +13,8 @@ public class PlayerStateController : MonoBehaviour
     }
 
     private PlayerStates currentState;
-    void Start()
-    {
-        currentState = PlayerStates.Idle;
-    }
 
-    private void SetPlayerStates(PlayerStates newState)
+    public void ChangePlayerState(PlayerStates newState)
     {
         var previousState = currentState;
         if (previousState == newState)
@@ -26,5 +22,10 @@ public class PlayerStateController : MonoBehaviour
 
         currentState = newState;
         OnStateChanged?.Invoke(previousState, newState);
+    }
+
+    public PlayerStates GetCurrentState()
+    {
+        return currentState;
     }
 }

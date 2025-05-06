@@ -48,8 +48,8 @@ public class PlayerController : MonoBehaviour
     }
     private void SetMovementDirection()
     {
-        horizontalInput = Input.GetAxisRaw("Horizontal");
-        verticalInput = Input.GetAxisRaw("Vertical");
+        horizontalInput = Input.GetAxisRaw(Consts.GameInputs.HORIZONTAL_INPUT);
+        verticalInput = Input.GetAxisRaw(Consts.GameInputs.VERTICAL_INPUT);
 
         movementDirection = new Vector3(horizontalInput, 0f, verticalInput);
     }

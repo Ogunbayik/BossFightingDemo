@@ -4,8 +4,22 @@ using UnityEngine;
 
 public class DogWarrior : EnemyBase
 {
-    public override void Attack()
+    private void OnEnable()
     {
-        throw new System.NotImplementedException();
+        EnemyAnimationController.OnAttackComplete += EnemyAnimationController_OnAttackComplete;
+    }
+    private void OnDisable()
+    {
+        EnemyAnimationController.OnAttackComplete -= EnemyAnimationController_OnAttackComplete;
+    }
+    private void EnemyAnimationController_OnAttackComplete()
+    {
+        if (GetPlayerDistance() >= enemySO.GetAttackDistance())
+            SetEnemyState(EnemyStates.Chasing);
+    }
+
+    public override void HandleAttackState()
+    {
+        animationController.AttackAnimation();
     }
 }

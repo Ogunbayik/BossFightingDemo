@@ -6,6 +6,12 @@ public class Consts
         public const string VERTICAL_INPUT = "Vertical";
     }
 
+    public struct EnemyAnimationParameters
+    {
+        public const string IS_MOVE_PARAMETER = "isMove";
+        public const string IS_ATTACK_PARAMETER = "isAttack";
+    }
+
 
 }
 

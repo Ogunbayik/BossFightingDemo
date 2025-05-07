@@ -17,5 +17,5 @@ MonoBehaviour:
   maxHP: 100
   movementSpeed: 2
   chaseDistance: 8
-  attackDistance: 1
+  attackDistance: 2
   retreatingDistance: 10

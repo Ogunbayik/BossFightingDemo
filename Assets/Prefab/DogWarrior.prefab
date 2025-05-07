@@ -966,6 +966,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4003941198996343175}
   - component: {fileID: 4003941198987028073}
+  - component: {fileID: 8789262005960212433}
   m_Layer: 0
   m_Name: WarriorVisual
   m_TagString: Untagged
@@ -999,7 +1000,7 @@ Animator:
   m_GameObject: {fileID: 4003941198996510119}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: d9a1483b77bf10e4e851678ab6c2e54e, type: 3}
-  m_Controller: {fileID: 9100000, guid: b60dc9aa529b314489f628aa3b57c470, type: 2}
+  m_Controller: {fileID: 9100000, guid: cdb3825705fe9c84894bb35aa7e6b6bf, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1008,6 +1009,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &8789262005960212433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4003941198996510119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2c20c4f510609e458a5c3afb8425ea0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4003941198996510121
 GameObject:
   m_ObjectHideFlags: 0
@@ -2403,7 +2416,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4860786395124248108}
   - component: {fileID: 733338899942506649}
-  - component: {fileID: 8944793069358615615}
   m_Layer: 0
   m_Name: DogWarrior
   m_TagString: Untagged
@@ -2439,18 +2451,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemySO: {fileID: 11400000, guid: be16b8ad9f6906e49a8801b7dbdf0a26, type: 2}
---- !u!114 &8944793069358615615
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4860786395124248109}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b37c95d0d9810c640b6e6a288aac04fa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &4929439599583347817
 GameObject:
   m_ObjectHideFlags: 0

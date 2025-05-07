@@ -12,14 +12,17 @@ public abstract class EnemyBase : MonoBehaviour
 {
     private EnemyStates currentState;
     private PlayerController player;
+    protected EnemyAnimationController animationController;
+
     [Header("Enemy Settings")]
-    [SerializeField] private EnemySO enemySO;
+    [SerializeField] protected EnemySO enemySO;
 
     private int currentHP;
 
     public virtual void Awake()
     {
         player = GameObject.FindObjectOfType<PlayerController>();
+        animationController = GetComponentInChildren<EnemyAnimationController>();
     }
     public virtual void Start()
     {
@@ -36,6 +39,9 @@ public abstract class EnemyBase : MonoBehaviour
             case EnemyStates.Chasing:
                 HandleChaseState();
                 break;
+            case EnemyStates.Attacking:
+                HandleAttackState();
+                break;
         }
     }
     protected virtual void HandleIdleState()
@@ -49,13 +55,16 @@ public abstract class EnemyBase : MonoBehaviour
     {
         //Enemy is chasing player
         this.transform.position = Vector3.MoveTowards(this.transform.position, player.transform.position, enemySO.GetMovementSpeed() * Time.deltaTime);
+        animationController.SetMoveAnimation(true);
+
+        if (GetPlayerDistance() <= enemySO.GetAttackDistance())
+            SetEnemyState(EnemyStates.Attacking);
     }
     protected virtual float GetPlayerDistance()
     {
         var playerDistance = Vector3.Distance(this.transform.position, player.transform.position);
         return playerDistance;
     }
-
     protected virtual void SetEnemyState(EnemyStates newState)
     {
         if (currentState == newState)
@@ -63,8 +72,7 @@ public abstract class EnemyBase : MonoBehaviour
 
         currentState = newState;
     }
-
-    public abstract void Attack();
+    public abstract void HandleAttackState();
 
     public virtual void TakeDamage(int amount)
     {
